@@ -6,7 +6,7 @@ File: py7.py "PI-seven" or π-7
 
 Author: William F. Gilreath (will@wfgilreath.xyz)
 
-Date: 03-30-2025
+Date: 04-10-2025
 
 Description: This Python app uses seven Python lint tools to check Python
 source code. The seven tools are:
@@ -50,9 +50,10 @@ __license__ = "GPL"
 __version__ = "v3.0"
 __maintainer__ = "William F. Gilreath"
 __email__ = "william.f.gilreath@gmail.com"
-__release__ = "v 1.3.1"
+__release__ = "v 1.3.2"
 
-MCCABE_MIN = '3'  # mccabe cyclotomic complexity threshold for error
+# mccabe cyclotomic complexity threshold for error
+MCCABE_MIN = '3'
 
 # required external test modules used by py7
 PY_MOD_LIST = ['bandit','mccabe','mypy','pyflakes','pylint','ruff','vulture',]
@@ -170,7 +171,8 @@ def main():
     version()
     print("")
 
-    if ("-h",'--help') in sys.argv:
+    # check for 2 CLI args, then if <script> (-h | --help)
+    if len(sys.argv) == 2 and sys.argv[1] in ('-h', '--help'):
         usage()
         sys.exit(0)
 
@@ -189,7 +191,7 @@ def main():
     print("   ")
 
     for i in range(1, len(sys.argv)):
-        print("\n::--------------------------------------------------------------------------------::\n")
+        print("\n::---------------------------------------------------------------------------::\n")
         run_lint_tests(sys.argv[i])
         print("   ")
 
