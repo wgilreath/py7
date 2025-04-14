@@ -1,0 +1,8 @@
+Output for Py7 lint tool run on the test files:
+
+1. py7.py - the tool itself
+2. psh.py - Python shell
+3. basic.py - BASIC language interpreter
+4. tipy - the "world's smallest" TIny PYthon interpreter
+
+The Py7.py tools were run on Q4OS Linux, and MacOS Sequioa. April 14, 2025.
