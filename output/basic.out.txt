@@ -1,0 +1,848 @@
+/home/william/PycharmProject/PiSeven/.venv/bin/python /home/william/PycharmProject/PiSeven/py7.py basic.py 
+
+
+Py7 Lint Tool © Copyright 2025 Release: v 1.3.2
+
+
+#
+# Python Linter Tool Script  v 1.3.2
+# 
+# Checking for required Python modules...
+#
+   
+  #:>The bandit module exists.
+   
+  #:>The mccabe module exists.
+   
+  #:>The mypy module exists.
+   
+  #:>The pyflakes module exists.
+   
+  #:>The pylint module exists.
+   
+  #:>The ruff module exists.
+   
+  #:>The vulture module exists.
+
+
+Press any key to continue...
+
+
+::
+:: Beginning Py7 Lint
+::
+   
+
+::---------------------------------------------------------------------------::
+
+  ::>
+  ::> bandit on file: basic.py
+  ::>
+  ::> 
+  ::> [
+ Run started:2025-04-13 08:39:42.128450
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '+'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: ./basic.py:311:10
+310		if match("+"):
+311			token = "+"
+312			return True
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '-'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: ./basic.py:314:10
+313		elif match("-"):
+314			token = "-"
+315			return True
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '*'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: ./basic.py:322:10
+321		if match("*"):
+322			token = "*"
+323			return True
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '/'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: ./basic.py:325:10
+324		elif match("/"):
+325			token = "/"
+326			return True
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '\'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b105_hardcoded_password_string.html
+   Location: ./basic.py:328:10
+327		elif match("\\"):
+328			token = "\\"
+329			return True
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_calls.html#b311-random
+   Location: ./basic.py:659:16
+658		"timer": lambda: time.process_time(),
+659		"rnd": lambda: random.random(),
+660		"pi": lambda: math.pi,
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 615
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 6
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 5
+		High: 1
+Files skipped (0):
+ 
+  ::> ]
+  ::> 
+  ::>
+  ::> mccabe on file: basic.py
+  ::>
+  ::> 
+  ::> [
+No problems detected. 
+  ::> ]
+  ::> 
+  ::>
+  ::> mypy on file: basic.py
+  ::>
+  ::> 
+  ::> [
+ Success: no issues found in 1 source file
+ 
+  ::> ]
+  ::> 
+  ::>
+  ::> pyflakes on file: basic.py
+  ::>
+  ::> 
+  ::> [
+ basic.py:717:3: 'readline' imported but unused
+ basic.py:718:2: local variable 'e' is assigned to but never used
+ 
+  ::> ]
+  ::> 
+  ::>
+  ::> pylint on file: basic.py
+  ::>
+  ::> 
+  ::> [
+ ************* Module basic
+basic.py:19:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:20:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:21:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:24:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:25:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:27:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:28:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:29:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:30:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:31:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:32:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:33:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:34:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:37:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:38:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:39:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:40:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:41:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:42:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:43:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:44:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:45:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:46:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:47:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:48:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:49:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:50:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:51:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:54:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:56:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:57:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:58:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:59:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:60:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:61:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:62:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:63:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:64:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:67:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:68:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:69:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:70:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:71:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:72:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:73:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:74:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:75:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:76:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:77:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:78:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:79:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:80:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:81:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:82:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:84:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:85:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:88:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:89:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:90:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:91:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:92:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:93:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:94:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:95:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:96:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:101:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:102:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:105:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:106:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:107:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:108:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:109:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:110:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:111:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:113:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:116:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:117:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:118:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:119:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:120:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:121:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:122:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:125:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:126:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:129:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:130:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:131:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:132:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:133:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:134:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:135:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:136:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:137:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:138:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:141:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:142:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:143:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:144:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:145:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:148:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:149:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:150:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:151:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:152:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:153:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:154:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:155:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:156:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:157:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:158:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:161:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:162:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:163:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:164:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:165:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:166:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:167:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:168:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:169:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:170:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:171:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:172:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:173:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:176:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:177:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:178:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:179:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:180:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:202:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:203:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:204:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:205:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:206:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:207:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:208:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:209:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:210:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:211:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:212:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:213:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:214:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:215:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:216:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:217:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:218:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:219:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:220:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:221:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:222:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:223:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:224:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:225:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:226:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:227:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:230:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:231:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:232:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:233:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:234:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:235:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:236:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:237:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:238:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:239:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:240:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:241:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:246:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:247:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:248:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:249:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:250:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:251:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:252:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:254:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:257:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:258:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:259:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:260:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:261:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:262:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:264:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:266:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:267:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:268:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:269:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:270:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:271:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:272:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:273:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:274:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:275:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:276:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:277:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:278:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:279:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:280:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:281:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:282:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:283:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:286:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:287:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:288:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:289:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:290:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:291:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:292:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:293:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:294:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:295:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:296:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:297:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:298:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:299:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:300:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:301:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:302:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:303:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:304:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:305:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:306:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:309:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:310:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:311:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:312:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:313:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:314:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:315:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:316:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:317:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:320:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:321:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:322:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:323:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:324:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:325:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:326:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:327:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:328:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:329:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:330:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:331:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:334:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:335:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:336:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:337:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:338:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:339:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:340:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:341:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:342:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:343:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:346:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:347:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:348:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:349:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:350:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:351:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:352:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:353:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:354:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:355:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:356:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:357:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:358:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:359:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:360:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:361:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:362:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:363:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:374:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:375:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:377:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:378:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:379:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:380:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:381:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:382:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:385:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:386:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:387:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:388:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:389:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:392:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:393:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:394:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:395:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:396:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:397:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:399:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:400:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:401:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:403:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:406:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:407:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:408:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:409:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:410:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:411:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:412:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:413:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:414:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:415:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:416:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:419:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:420:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:421:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:422:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:423:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:424:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:425:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:426:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:427:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:428:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:429:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:430:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:431:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:432:0: W0311: Bad indentation. Found 4 spaces, expected 16 (bad-indentation)
+basic.py:433:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:434:0: W0311: Bad indentation. Found 4 spaces, expected 16 (bad-indentation)
+basic.py:435:0: W0311: Bad indentation. Found 5 spaces, expected 20 (bad-indentation)
+basic.py:436:0: W0311: Bad indentation. Found 4 spaces, expected 16 (bad-indentation)
+basic.py:437:0: W0311: Bad indentation. Found 5 spaces, expected 20 (bad-indentation)
+basic.py:438:0: W0311: Bad indentation. Found 5 spaces, expected 20 (bad-indentation)
+basic.py:439:0: W0311: Bad indentation. Found 5 spaces, expected 20 (bad-indentation)
+basic.py:440:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:441:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:444:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:445:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:446:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:447:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:448:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:449:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:450:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:451:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:456:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:457:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:458:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:459:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:460:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:461:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:462:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:463:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:464:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:465:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:466:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:469:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:470:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:471:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:478:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:479:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:480:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:481:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:482:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:483:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:484:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:485:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:488:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:489:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:490:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:491:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:492:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:493:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:494:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:495:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:496:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:497:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:498:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:501:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:502:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:503:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:504:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:505:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:506:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:511:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:512:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:513:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:514:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:515:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:516:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:517:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:520:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:521:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:522:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:523:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:524:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:527:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:528:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:531:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:532:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:535:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:538:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:539:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:540:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:541:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:542:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:543:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:544:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:545:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:546:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:547:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:548:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:549:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:550:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:553:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:554:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:556:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:557:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:558:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:559:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:561:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:562:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:563:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:564:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:566:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:567:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:568:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:569:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:570:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:571:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:572:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:573:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:575:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:576:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:577:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:580:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:582:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:583:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:585:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:587:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:588:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:589:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:590:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:591:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:592:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:593:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:594:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:595:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:596:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:597:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:598:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:599:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:600:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:601:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:604:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:605:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:606:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:607:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:610:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:611:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:612:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:613:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:614:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:615:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:616:0: W0311: Bad indentation. Found 4 spaces, expected 16 (bad-indentation)
+basic.py:617:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:618:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:619:0: C0303: Trailing whitespace (trailing-whitespace)
+basic.py:621:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:622:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:623:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:624:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:625:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:626:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:629:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:630:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:631:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:632:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:633:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:634:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:635:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:636:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:677:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:678:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:679:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:680:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:681:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:682:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:683:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:684:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:685:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:686:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:687:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:688:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:689:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:690:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:691:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:692:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:693:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:694:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:695:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:696:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:697:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:698:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:699:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:700:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:701:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:702:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:703:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:704:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:705:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:706:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:707:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:708:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:709:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:710:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:711:0: W0311: Bad indentation. Found 4 spaces, expected 16 (bad-indentation)
+basic.py:712:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:713:0: W0311: Bad indentation. Found 4 spaces, expected 16 (bad-indentation)
+basic.py:716:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:717:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:718:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:719:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:721:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:723:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:724:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:725:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:726:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:727:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:728:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:729:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:730:0: W0311: Bad indentation. Found 3 spaces, expected 12 (bad-indentation)
+basic.py:732:0: W0311: Bad indentation. Found 1 spaces, expected 4 (bad-indentation)
+basic.py:733:0: W0311: Bad indentation. Found 2 spaces, expected 8 (bad-indentation)
+basic.py:14:0: C0103: Constant name "line" doesn't conform to UPPER_CASE naming style (invalid-name)
+basic.py:15:0: C0103: Constant name "cursor" doesn't conform to UPPER_CASE naming style (invalid-name)
+basic.py:16:0: C0103: Constant name "token" doesn't conform to UPPER_CASE naming style (invalid-name)
+basic.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:19:1: W0603: Using the global statement (global-statement)
+basic.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:24:1: W0603: Using the global statement (global-statement)
+basic.py:36:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:37:1: W0603: Using the global statement (global-statement)
+basic.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:54:1: W0603: Using the global statement (global-statement)
+basic.py:66:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:67:1: W0603: Using the global statement (global-statement)
+basic.py:87:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:100:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:101:1: W0603: Using the global statement (global-statement)
+basic.py:104:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:115:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:116:1: W0603: Using the global statement (global-statement)
+basic.py:118:1: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+basic.py:124:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:140:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:141:1: W0602: Using global for 'token' but no assignment is done (global-variable-not-assigned)
+basic.py:142:1: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+basic.py:145:9: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+basic.py:147:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:160:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:175:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:177:1: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+basic.py:201:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:202:1: W0602: Using global for 'token' but no assignment is done (global-variable-not-assigned)
+basic.py:209:1: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+basic.py:213:2: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+basic.py:222:2: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+basic.py:229:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:236:2: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+basic.py:245:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:246:1: R1720: Unnecessary "elif" after "raise", remove the leading "el" from "elif" (no-else-raise)
+basic.py:256:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:257:1: W0603: Using the global statement (global-statement)
+basic.py:285:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:296:5: W0621: Redefining name 'i' from outer scope (line 724) (redefined-outer-name)
+basic.py:286:1: W0603: Using the global statement (global-statement)
+basic.py:296:1: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
+basic.py:308:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:309:1: W0603: Using the global statement (global-statement)
+basic.py:310:1: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+basic.py:319:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:320:1: W0603: Using the global statement (global-statement)
+basic.py:321:1: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+basic.py:333:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:334:1: W0603: Using the global statement (global-statement)
+basic.py:345:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:347:1: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+basic.py:352:2: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+basic.py:345:0: R0911: Too many return statements (7/6) (too-many-return-statements)
+basic.py:345:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+basic.py:373:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:374:1: W0603: Using the global statement (global-statement)
+basic.py:384:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:391:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:398:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:399:1: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+basic.py:405:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:406:1: W0603: Using the global statement (global-statement)
+basic.py:409:1: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+basic.py:418:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:427:5: W0621: Redefining name 'i' from outer scope (line 724) (redefined-outer-name)
+basic.py:427:1: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
+basic.py:443:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:455:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:456:1: W0603: Using the global statement (global-statement)
+basic.py:468:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:469:1: W0621: Redefining name 'addr' from outer scope (line 473) (redefined-outer-name)
+basic.py:470:5: W0621: Redefining name 'i' from outer scope (line 724) (redefined-outer-name)
+basic.py:474:0: C0103: Constant name "crt_line" doesn't conform to UPPER_CASE naming style (invalid-name)
+basic.py:475:0: C0103: Constant name "stop" doesn't conform to UPPER_CASE naming style (invalid-name)
+basic.py:477:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:482:5: W0621: Redefining name 'i' from outer scope (line 724) (redefined-outer-name)
+basic.py:478:1: W0603: Using the global statement (global-statement)
+basic.py:482:10: C0201: Consider iterating the dictionary directly instead of calling .keys() (consider-iterating-dictionary)
+basic.py:487:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:488:1: W0603: Using the global statement (global-statement)
+basic.py:497:8: W0718: Catching too general exception Exception (broad-exception-caught)
+basic.py:500:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:501:1: W0603: Using the global statement (global-statement)
+basic.py:510:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:511:1: W0603: Using the global statement (global-statement)
+basic.py:519:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:520:1: W0603: Using the global statement (global-statement)
+basic.py:526:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:527:1: W0603: Using the global statement (global-statement)
+basic.py:530:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:531:1: W0603: Using the global statement (global-statement)
+basic.py:534:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:537:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:538:1: W0603: Using the global statement (global-statement)
+basic.py:552:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:579:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:580:1: W0603: Using the global statement (global-statement)
+basic.py:596:4: E0606: Possibly using variable 'done' before assignment (possibly-used-before-assignment)
+basic.py:603:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:609:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:613:2: W0621: Redefining name 'addr' from outer scope (line 473) (redefined-outer-name)
+basic.py:614:6: W0621: Redefining name 'i' from outer scope (line 724) (redefined-outer-name)
+basic.py:620:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:623:1: W0621: Redefining name 'addr' from outer scope (line 473) (redefined-outer-name)
+basic.py:625:6: W0621: Redefining name 'i' from outer scope (line 724) (redefined-outer-name)
+basic.py:624:6: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+basic.py:628:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:633:6: W0621: Redefining name 'i' from outer scope (line 724) (redefined-outer-name)
+basic.py:629:1: W0603: Using the global statement (global-statement)
+basic.py:632:6: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+basic.py:658:10: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:659:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:661:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:662:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:663:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:664:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:665:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:666:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:667:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:668:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:669:8: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:671:11: W0108: Lambda may not be necessary (unnecessary-lambda)
+basic.py:676:0: C0116: Missing function or method docstring (missing-function-docstring)
+basic.py:677:1: W0603: Using the global statement (global-statement)
+basic.py:712:10: W0718: Catching too general exception Exception (broad-exception-caught)
+basic.py:676:0: R0912: Too many branches (15/12) (too-many-branches)
+basic.py:726:3: C0103: Constant name "cursor" doesn't conform to UPPER_CASE naming style (invalid-name)
+basic.py:717:2: W0611: Unused import readline (unused-import)
+
+-----------------------------------
+Your code has been rated at 0.00/10
+
+ 
+  ::> ]
+  ::> 
+  ::>
+  ::> ruff on file: basic.py
+  ::>
+  ::> 
+  ::> [
+No problems detected. 
+  ::> ]
+  ::> 
+  ::>
+  ::> vulture on file: basic.py
+  ::>
+  ::> 
+  ::> [
+ basic.py:717: unused import 'readline' (90% confidence)
+ 
+  ::> ]
+  ::> 
+   
+::
+:: Completed Py7 Lint
+::
+
+Press any key to continue...
+
+
+Process finished with exit code 0
